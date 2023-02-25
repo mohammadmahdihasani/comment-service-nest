@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongo-database
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: challenge
+    ports:
+      - "27017-27019:27017-27019"
+    volumes:
+      - ./mongo-data:/data/db
+
+volumes:
+  mongo-data:
